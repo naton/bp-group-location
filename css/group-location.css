@@ -1,0 +1,11 @@
+#group-map {
+	clear:both;
+	margin:10px 0;
+	height:350px;
+}
+/* Overrides for some cases where the BuddyPress CSS causes unwanted appearance */
+.leaflet-container .leaflet-control-geosearch input {
+	width: 100% !important;
+	margin:0 !important;
+	color:rgb(0, 0, 0);	
+}
