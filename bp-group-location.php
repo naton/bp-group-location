@@ -64,8 +64,7 @@ class Group_Location extends BP_Group_Extension {
 	 * settings_screen() is the catch-all method for displaying the content 
 	 * of the edit, create, and Dashboard admin panels
 	 */
-	function settings_screen( $group_id ) {
-		var_dump($args);
+	function settings_screen( $group_id = NULL ) {
 		$setting = groups_get_groupmeta( $group_id, 'group_location' );
 		$group_location = (isset($setting[0])) ? $setting[0] : '?';
 		$group_location_lat = (isset($setting[1])) ? $setting[1] : '58.25';
@@ -125,7 +124,7 @@ class Group_Location extends BP_Group_Extension {
 	 * settings_screen_save() contains the catch-all logic for saving 
 	 * settings from the edit, create, and Dashboard admin panels
 	 */
-	function settings_screen_save( $group_id ) { 
+	function settings_screen_save( $group_id = NULL ) { 
 		if ( isset( $_POST['group_location'], $_POST['group_location_lat'], $_POST['group_location_long'] ) ) {
 			$setting = array($_POST['group_location'], $_POST['group_location_lat'], $_POST['group_location_long']);
 		}
